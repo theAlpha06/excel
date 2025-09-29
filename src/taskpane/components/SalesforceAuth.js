@@ -47,7 +47,7 @@ const SalesforceAuth = ({ setIsConnected, isConnected, orgType }) => {
 
       if (accessToken && instanceUrl) {
         try {
-          const response = await fetch("http://localhost:5000/salesforce/check-status", {
+          const response = await fetch("https://salesforce-connecter-c5hxfvbhgxfgdbbr.canadacentral-01.azurewebsites.net/salesforce/check-status", {
             method: "GET",
             headers: {
               "sf-instance-url": instanceUrl,
