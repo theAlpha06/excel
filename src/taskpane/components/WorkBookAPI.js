@@ -5,7 +5,6 @@ import { DefaultButton, Dialog, DialogFooter, PrimaryButton } from "@fluentui/re
 const WorkBookAPI = () => {
   const [results, setResults] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
-  const [error, setError] = React.useState(null);
   const pushToSalesforce = async () => {
     setIsLoading(true);
     Office.context.document.getFileAsync(
@@ -37,14 +36,7 @@ const WorkBookAPI = () => {
                       base64Data,
                       "0Q071000000sVObCAM"
                     );
-                    if(!result.ok){
-                      setError(result[0].message);
-                      setTimeout(() => {
-                        setError(null);
-                      }, 3000);
-                    } else {
-                      setResults(result);
-                    }
+                    setResults(result);
                     setIsLoading(false);
                   };
                   reader.readAsDataURL(blob);
@@ -64,7 +56,7 @@ const WorkBookAPI = () => {
   };
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{width: "100%"}}>
       {results && (
         <Dialog
           hidden={!results}
@@ -77,7 +69,7 @@ const WorkBookAPI = () => {
           {results && (
             <div>
               <h4>Results:</h4>
-              <pre>{results?.id }</pre>
+              <pre>{results?.id}</pre>
             </div>
           )}
           <DialogFooter>
@@ -85,8 +77,7 @@ const WorkBookAPI = () => {
           </DialogFooter>
         </Dialog>
       )}
-      <PrimaryButton style={{ width: "100%" }} text="Push Workbook" onClick={pushToSalesforce} disabled={isLoading} />
-      {error && <div style={{ color: "red", marginTop: 10 }}>{error}</div>}
+      <PrimaryButton style={{width: "100%"}} text="Push Workbook" onClick={pushToSalesforce} disabled={isLoading} />
     </div>
   );
 };
