@@ -15,7 +15,7 @@ import {
 
 const CONSUMER_KEY =
   "3MVG9GCMQoQ6rpzQm797ZYHBww6Iye8XtvMqgddHtVjTr83ocGxvaeyGNJuUUf_dDrt688z_OV9wi8c2RC90w";
-const REDIRECT_URI = "https://localhost:3000/auth-callback.html";
+const REDIRECT_URI = "https://excel-p9o4.onrender.com/auth-callback.html";
 
 const buttonStackTokens = {
   childrenGap: 12

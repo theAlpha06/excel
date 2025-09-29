@@ -26,7 +26,7 @@ class SalesforceService {
       const accessToken = await this.getAccessToken();
       const instanceUrl = await this.getInstanceUrl();
 
-      const url = `http://localhost:5000/salesforce${endpoint}`;
+      const url = `https://salesforce-connecter-c5hxfvbhgxfgdbbr.canadacentral-01.azurewebsites.net/salesforce${endpoint}`;
 
       const headers = {
         "sf-access-token": accessToken,
@@ -65,7 +65,7 @@ class SalesforceService {
       const accessToken = await this.getAccessToken();
       const instanceUrl = await this.getInstanceUrl();
 
-      const url = `http://localhost:5000/salesforce${endpoint}`;
+      const url = `https://salesforce-connecter-c5hxfvbhgxfgdbbr.canadacentral-01.azurewebsites.net/salesforce${endpoint}`;
 
       const headers = {
         "sf-access-token": accessToken,
@@ -111,7 +111,7 @@ class SalesforceService {
   static async query(soqlQuery) {
     const accessToken = await this.getAccessToken();
     const instanceUrl = await this.getInstanceUrl();
-    const response = await fetch("http://localhost:5000/salesforce/services/data/v58.0/query", {
+    const response = await fetch("https://salesforce-connecter-c5hxfvbhgxfgdbbr.canadacentral-01.azurewebsites.net/salesforce/services/data/v58.0/query", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -131,7 +131,7 @@ class SalesforceService {
     const accessToken = await this.getAccessToken();
     const instanceUrl = await this.getInstanceUrl();
 
-    const response = await fetch("http://localhost:5000/salesforce/create", {
+    const response = await fetch("https://salesforce-connecter-c5hxfvbhgxfgdbbr.canadacentral-01.azurewebsites.net/salesforce/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -218,7 +218,7 @@ class SalesforceService {
       const accessToken = await this.getAccessToken();
       const instanceUrl = await this.getInstanceUrl();
 
-      const response = await fetch("http://localhost:5000/salesforce/upsert", {
+      const response = await fetch("https://salesforce-connecter-c5hxfvbhgxfgdbbr.canadacentral-01.azurewebsites.net/salesforce/upsert", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -288,7 +288,7 @@ class SalesforceService {
       const instanceUrl = await this.getInstanceUrl();
   
       const response = await fetch(
-        `http://localhost:5000/salesforce/composite-tree`,
+        `https://salesforce-connecter-c5hxfvbhgxfgdbbr.canadacentral-01.azurewebsites.net/salesforce/composite-tree`,
         {
           method: "POST",
           headers: {
@@ -314,7 +314,7 @@ class SalesforceService {
     const accessToken = await this.getAccessToken();
     const instanceUrl = await this.getInstanceUrl();
 
-    const response = await fetch("http://localhost:5000/salesforce/uploadWorkbook", {
+    const response = await fetch("https://salesforce-connecter-c5hxfvbhgxfgdbbr.canadacentral-01.azurewebsites.net/salesforce/uploadWorkbook", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
