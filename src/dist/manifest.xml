@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>d61b109c-90a9-4525-873f-c61af7a1fae5</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="dmpl_connect"/>
+  <Description DefaultValue="CRUD operations of Salesforce injected into Excel."/>
+  <IconUrl DefaultValue="https://dmpl-connector-cxgdewgsgce5g9ff.canadacentral-01.azurewebsites.net/assets/dm.png"/>
+  <HighResolutionIconUrl DefaultValue="https://dmpl-connector-cxgdewgsgce5g9ff.canadacentral-01.azurewebsites.net/assets/dm.png"/>
+  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+  <AppDomains>
+    <AppDomain>login.salesforce.com</AppDomain>
+    <AppDomain>https://test.salesforce.com</AppDomain>
+    <AppDomain>https://login.salesforce.com</AppDomain>
+    <AppDomain>test.salesforce.com</AppDomain>
+    <AppDomain>*.salesforce.com</AppDomain>
+    <AppDomain>https://localhost:3000</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://dmpl-connector-cxgdewgsgce5g9ff.canadacentral-01.azurewebsites.net/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+                    xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <FunctionFile resid="Commands.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="CommandsGroup">
+                <Label resid="CommandsGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="TaskpaneButton">
+                  <Label resid="TaskpaneButton.Label"/>
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://dmpl-connector-cxgdewgsgce5g9ff.canadacentral-01.azurewebsites.net/assets/dm.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://dmpl-connector-cxgdewgsgce5g9ff.canadacentral-01.azurewebsites.net/assets/dm.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://dmpl-connector-cxgdewgsgce5g9ff.canadacentral-01.azurewebsites.net/assets/dm.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://dmpl-connector-cxgdewgsgce5g9ff.canadacentral-01.azurewebsites.net/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://dmpl-connector-cxgdewgsgce5g9ff.canadacentral-01.azurewebsites.net/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Interact with salesforce like a pro"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="dealermatix.com"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="dmpl_connect"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Interact with salesforce like a pro"/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane"/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
