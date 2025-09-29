@@ -1,0 +1,229 @@
+.salesforce-auth-container {
+  padding: 20px 0;
+  min-height: 200px;
+}
+
+.salesforce-auth-container h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #323130;
+  text-align: center;
+}
+
+.salesforce-connect-card {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  max-width: 400px;
+  margin: 0 auto;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.salesforce-connect-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.salesforce-connected-card {
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  border: 1px solid #e8f5e8;
+  max-width: 450px;
+  margin: 0 auto;
+  position: relative;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.salesforce-connected-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0078d4 0%, #40e0d0 100%);
+  border-radius: 12px 12px 0 0;
+}
+
+.salesforce-connected-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.profile-header {
+  border-bottom: 1px solid #f3f2f1;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 16px;
+  background-color: #e8f5e8;
+  color: #107c10;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #107c10;
+  margin-right: 6px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.status-message {
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background-color: #f3f2f1;
+  border-left: 4px solid #8a8886;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.status-message.success {
+  background-color: #dff6dd;
+  border-left: 4px solid #107c10;
+  color: #0e5a0e;
+}
+
+.status-message.success::before {
+  content: "✓ ";
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.error-message {
+  background-color: #fde7e9 !important;
+  border-left: 4px solid #a80000 !important;
+  color: #8b1b2b;
+  margin-bottom: 20px;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 6px;
+}
+
+.error-message::before {
+  content: "⚠ ";
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.salesforce-auth-container .ms-Spinner {
+  margin: 40px auto;
+}
+
+.salesforce-auth-container .ms-Spinner-label {
+  color: #605e5c;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.salesforce-auth-container .ms-Button {
+  transition: all 0.2s ease-in-out;
+}
+
+.salesforce-auth-container .ms-Button:hover {
+  transform: translateY(-1px);
+}
+
+.salesforce-auth-container .ms-Button--primary {
+  box-shadow: 0 2px 8px rgba(0, 120, 212, 0.3);
+}
+
+.salesforce-auth-container .ms-Button--primary:hover {
+  box-shadow: 0 4px 12px rgba(0, 120, 212, 0.4);
+}
+
+.salesforce-connected-card .ms-Persona {
+  margin: 8px 0;
+}
+
+.salesforce-connected-card .ms-Persona-primaryText {
+  font-weight: 600;
+  font-size: 16px;
+  color: #323130;
+}
+
+.salesforce-connected-card .ms-Persona-secondaryText {
+  color: #605e5c;
+  font-size: 14px;
+}
+
+.salesforce-connected-card .ms-Persona-tertiaryText {
+  color: #0078d4;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 480px) {
+  .salesforce-auth-container {
+    padding: 10px;
+  }
+  
+  .salesforce-connect-card,
+  .salesforce-connected-card {
+    max-width: 100%;
+    margin: 0 10px;
+    padding: 16px;
+  }
+  
+  .status-message,
+  .error-message {
+    max-width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .salesforce-connect-card,
+  .salesforce-connected-card {
+    background-color: #292829;
+    border-color: #484644;
+    color: #ffffff;
+  }
+  
+  .profile-header {
+    border-bottom-color: #484644;
+  }
+  
+  .status-message {
+    background-color: #484644;
+    border-left-color: #a19f9d;
+    color: #ffffff;
+  }
+  
+  .status-message.success {
+    background-color: #294a29;
+    color: #92c392;
+  }
+}
